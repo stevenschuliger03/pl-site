@@ -53,6 +53,14 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Pin this. Left unset, the action's npx call cannot install wrangler
+          # non-interactively and silently falls back to whatever ancient
+          # wrangler is preinstalled on the runner. That version predates
+          # assets-only Workers, so it demands a `main` entry point -- which
+          # this config deliberately does not have, because there is no Worker
+          # script, only static files. The failure reads as a broken config
+          # rather than a stale tool. Keep in step with the local version.
+          wranglerVersion: "4.127.1"
           # The build already ran and was verified above; re-running it here
           # would discard those checks.
           command: deploy
