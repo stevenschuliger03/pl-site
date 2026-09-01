@@ -1,0 +1,162 @@
+[
+ {
+  "short": "MUN",
+  "name": "Man Utd",
+  "position": 10,
+  "goals": 5,
+  "xg": 6.97,
+  "xg_diff": -1.97
+ },
+ {
+  "short": "BRE",
+  "name": "Brentford",
+  "position": 5,
+  "goals": 4,
+  "xg": 5.58,
+  "xg_diff": -1.58
+ },
+ {
+  "short": "CHE",
+  "name": "Chelsea",
+  "position": 4,
+  "goals": 7,
+  "xg": 5.27,
+  "xg_diff": 1.73
+ },
+ {
+  "short": "BHA",
+  "name": "Brighton",
+  "position": 9,
+  "goals": 7,
+  "xg": 5.23,
+  "xg_diff": 1.77
+ },
+ {
+  "short": "LIV",
+  "name": "Liverpool",
+  "position": 13,
+  "goals": 4,
+  "xg": 4.75,
+  "xg_diff": -0.75
+ },
+ {
+  "short": "MCI",
+  "name": "Man City",
+  "position": 1,
+  "goals": 6,
+  "xg": 4.46,
+  "xg_diff": 1.54
+ },
+ {
+  "short": "IPS",
+  "name": "Ipswich Town",
+  "position": 12,
+  "goals": 4,
+  "xg": 3.85,
+  "xg_diff": 0.15
+ },
+ {
+  "short": "EVE",
+  "name": "Everton",
+  "position": 7,
+  "goals": 3,
+  "xg": 2.99,
+  "xg_diff": 0.01
+ },
+ {
+  "short": "NFO",
+  "name": "Nott'm Forest",
+  "position": 15,
+  "goals": 2,
+  "xg": 2.95,
+  "xg_diff": -0.95
+ },
+ {
+  "short": "ARS",
+  "name": "Arsenal",
+  "position": 2,
+  "goals": 4,
+  "xg": 2.94,
+  "xg_diff": 1.06
+ },
+ {
+  "short": "BOU",
+  "name": "Bournemouth",
+  "position": 14,
+  "goals": 2,
+  "xg": 2.84,
+  "xg_diff": -0.84
+ },
+ {
+  "short": "SUN",
+  "name": "Sunderland",
+  "position": 11,
+  "goals": 2,
+  "xg": 2.7,
+  "xg_diff": -0.7
+ },
+ {
+  "short": "CRY",
+  "name": "Crystal Palace",
+  "position": 18,
+  "goals": 1,
+  "xg": 2.65,
+  "xg_diff": -1.65
+ },
+ {
+  "short": "FUL",
+  "name": "Fulham",
+  "position": 16,
+  "goals": 2,
+  "xg": 2.32,
+  "xg_diff": -0.32
+ },
+ {
+  "short": "NEW",
+  "name": "Newcastle",
+  "position": 6,
+  "goals": 4,
+  "xg": 2.3,
+  "xg_diff": 1.7
+ },
+ {
+  "short": "LEE",
+  "name": "Leeds",
+  "position": 8,
+  "goals": 2,
+  "xg": 1.93,
+  "xg_diff": 0.07
+ },
+ {
+  "short": "HUL",
+  "name": "Hull City",
+  "position": 3,
+  "goals": 3,
+  "xg": 1.8,
+  "xg_diff": 1.2
+ },
+ {
+  "short": "TOT",
+  "name": "Spurs",
+  "position": 20,
+  "goals": 0,
+  "xg": 1.7,
+  "xg_diff": -1.7
+ },
+ {
+  "short": "COV",
+  "name": "Coventry City",
+  "position": 17,
+  "goals": 0,
+  "xg": 1.51,
+  "xg_diff": -1.51
+ },
+ {
+  "short": "AVL",
+  "name": "Aston Villa",
+  "position": 19,
+  "goals": 0,
+  "xg": 0.62,
+  "xg_diff": -0.62
+ }
+]

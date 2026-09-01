@@ -1,0 +1,191 @@
+{{ define "main" }}
+{{ $d := .Site.Data.pl }}
+{{ $m := $d.meta }}
+
+<header class="top">
+  <div class="wrap">
+    <h1>Premier League <span>2026/27</span></h1>
+    <div class="stamp">
+      <b>{{ $m.gameweek }}</b> &middot; {{ $m.matches_played }} of {{ $m.matches_total }} matches played<br>
+      Updated {{ $m.updated }}
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ---------- league table ---------- -->
+  <section class="panel">
+    <h2>Table <em>computed from results &mdash; the API publishes no standings</em></h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th class="l" colspan="2">Team</th>
+            <th>Pl</th><th>W</th><th>D</th><th>L</th>
+            <th class="dim hide-sm">GF</th><th class="dim hide-sm">GA</th>
+            <th>GD</th><th>Pts</th>
+            <th class="l hide-sm">Form</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{ range $d.standings }}
+          {{/* Comparisons use le/ge throughout, never eq. Hugo decodes these
+               JSON numbers as float64, and `eq .position 5` compares a float
+               to an int literal and is silently false -- which left 5th place
+               with no rail. le/ge coerce; eq does not. */}}
+          <tr class="{{ if le .position 4 }}ucl{{ else if le .position 5 }}uel{{ else if ge .position 18 }}rel{{ end }}">
+            <td class="rank">{{ .position }}</td>
+            {{/* Both names ship; CSS picks one. On a 375px screen the full
+                 names push Pts off the right edge, and Pts is the column
+                 people actually came for. */}}
+            <td class="l team"><span class="full">{{ .name }}</span><span class="abbr">{{ .short }}</span></td>
+            <td>{{ .played }}</td><td>{{ .won }}</td><td>{{ .drawn }}</td><td>{{ .lost }}</td>
+            <td class="dim hide-sm">{{ .gf }}</td><td class="dim hide-sm">{{ .ga }}</td>
+            <td class="{{ if gt .gd 0 }}pos{{ else if lt .gd 0 }}neg{{ end }}">
+              {{ if gt .gd 0 }}+{{ end }}{{ .gd }}
+            </td>
+            <td class="pts">{{ .points }}</td>
+            <td class="l hide-sm">
+              <span class="form">
+                {{ range .form }}<i class="{{ . }}">{{ . }}</i>{{ end }}
+              </span>
+            </td>
+          </tr>
+        {{ end }}
+        </tbody>
+      </table>
+    </div>
+    <p class="legend">
+      <span class="key ucl"></span> Champions League
+      <span class="key uel"></span> Europa League
+      <span class="key rel"></span> Relegation
+    </p>
+  </section>
+
+  <!-- ---------- scorers / assists ---------- -->
+  <div class="grid">
+    <section class="panel">
+      <h2>Top scorers</h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th class="l" colspan="2">Player</th><th>G</th><th>A</th><th class="dim">xG</th></tr></thead>
+          <tbody>
+          {{ range first 10 $d.scorers }}
+            <tr>
+              <td class="l team">{{ .name }}</td>
+              <td class="l dim">{{ .team }}</td>
+              <td class="pts">{{ .goals }}</td>
+              <td>{{ .assists }}</td>
+              <td class="dim">{{ .xg }}</td>
+            </tr>
+          {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Top assists</h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th class="l" colspan="2">Player</th><th>A</th><th>G</th><th class="dim">xA</th></tr></thead>
+          <tbody>
+          {{ range first 10 $d.assists }}
+            <tr>
+              <td class="l team">{{ .name }}</td>
+              <td class="l dim">{{ .team }}</td>
+              <td class="pts">{{ .assists }}</td>
+              <td>{{ .goals }}</td>
+              <td class="dim">{{ .xa }}</td>
+            </tr>
+          {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ---------- expected goals ---------- -->
+  <div class="grid">
+    <section class="panel">
+      <h2>Finishing vs chances <em>goals minus xG</em></h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th class="l" colspan="2">Player</th><th>G</th><th class="dim">xG</th><th>Diff</th></tr></thead>
+          <tbody>
+          {{ range first 10 $d.overperformers }}
+            <tr>
+              <td class="l team">{{ .name }}</td>
+              <td class="l dim">{{ .team }}</td>
+              <td>{{ .goals }}</td>
+              <td class="dim">{{ .xg }}</td>
+              <td class="pts {{ if gt .xg_diff 0.0 }}pos{{ else if lt .xg_diff 0.0 }}neg{{ end }}">
+                {{ if gt .xg_diff 0.0 }}+{{ end }}{{ printf "%.2f" .xg_diff }}
+              </td>
+            </tr>
+          {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Team xG <em>summed from the squad</em></h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th class="l">Team</th><th>Goals</th><th class="dim">xG</th><th>Diff</th></tr></thead>
+          <tbody>
+          {{ range first 10 $d.team_xg }}
+            <tr>
+              <td class="l team">{{ .name }}</td>
+              <td>{{ .goals }}</td>
+              <td class="dim">{{ printf "%.2f" .xg }}</td>
+              <td class="pts {{ if gt .xg_diff 0.0 }}pos{{ else if lt .xg_diff 0.0 }}neg{{ end }}">
+                {{ if gt .xg_diff 0.0 }}+{{ end }}{{ printf "%.2f" .xg_diff }}
+              </td>
+            </tr>
+          {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ---------- results / fixtures ---------- -->
+  <div class="grid">
+    <section class="panel">
+      <h2>Latest results</h2>
+      <ul class="matches">
+      {{ range first 10 $d.results }}
+        <li>
+          <span class="h {{ if gt .hs .ascore }}won{{ else if lt .hs .ascore }}lost{{ end }}">{{ .home_full }}</span>
+          <span class="score">{{ .hs }}&ndash;{{ .ascore }}</span>
+          <span class="a {{ if gt .ascore .hs }}won{{ else if lt .ascore .hs }}lost{{ end }}">{{ .away_full }}</span>
+        </li>
+      {{ end }}
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Next up{{ with $m.next_gameweek }} <em>{{ . }}</em>{{ end }}</h2>
+      <ul class="matches">
+      {{ range first 10 $d.upcoming }}
+        <li>
+          <span class="h">{{ .home_full }}</span>
+          <span class="when">{{ dateFormat "Mon 2 Jan &middot; 15:04" .kickoff | safeHTML }}</span>
+          <span class="a">{{ .away_full }}</span>
+        </li>
+      {{ end }}
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Built from the {{ .Site.Params.source }}. Rebuild with
+    <code>python tools/fetch.py &amp;&amp; hugo</code>.<br>
+    Kick-off times are UTC. Not affiliated with the Premier League.
+  </footer>
+
+</div>
+{{ end }}

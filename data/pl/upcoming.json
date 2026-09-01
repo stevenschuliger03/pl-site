@@ -1,0 +1,102 @@
+[
+ {
+  "gw": 3,
+  "kickoff": "2026-09-04T19:00:00Z",
+  "home": "IPS",
+  "home_full": "Ipswich Town",
+  "away": "LIV",
+  "away_full": "Liverpool",
+  "h_diff": 4,
+  "a_diff": 2
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T11:30:00Z",
+  "home": "NEW",
+  "home_full": "Newcastle",
+  "away": "BOU",
+  "away_full": "Bournemouth",
+  "h_diff": 3,
+  "a_diff": 3
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T14:00:00Z",
+  "home": "BRE",
+  "home_full": "Brentford",
+  "away": "SUN",
+  "away_full": "Sunderland",
+  "h_diff": 2,
+  "a_diff": 3
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T14:00:00Z",
+  "home": "BHA",
+  "home_full": "Brighton",
+  "away": "LEE",
+  "away_full": "Leeds",
+  "h_diff": 2,
+  "a_diff": 3
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T14:00:00Z",
+  "home": "FUL",
+  "home_full": "Fulham",
+  "away": "CRY",
+  "away_full": "Crystal Palace",
+  "h_diff": 3,
+  "a_diff": 3
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T14:00:00Z",
+  "home": "MCI",
+  "home_full": "Man City",
+  "away": "COV",
+  "away_full": "Coventry City",
+  "h_diff": 2,
+  "a_diff": 5
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T14:00:00Z",
+  "home": "NFO",
+  "home_full": "Nott'm Forest",
+  "away": "TOT",
+  "away_full": "Spurs",
+  "h_diff": 3,
+  "a_diff": 3
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-05T16:30:00Z",
+  "home": "HUL",
+  "home_full": "Hull City",
+  "away": "AVL",
+  "away_full": "Aston Villa",
+  "h_diff": 3,
+  "a_diff": 2
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-06T13:00:00Z",
+  "home": "EVE",
+  "home_full": "Everton",
+  "away": "MUN",
+  "away_full": "Man Utd",
+  "h_diff": 4,
+  "a_diff": 3
+ },
+ {
+  "gw": 3,
+  "kickoff": "2026-09-06T15:30:00Z",
+  "home": "ARS",
+  "home_full": "Arsenal",
+  "away": "CHE",
+  "away_full": "Chelsea",
+  "h_diff": 4,
+  "a_diff": 5
+ }
+]

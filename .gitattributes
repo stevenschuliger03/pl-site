@@ -1,0 +1,7 @@
+# CI builds on Linux while development happens on Windows. Normalising to LF in
+# the repo keeps the checkout byte-identical on both, so a Windows commit does
+# not show up as a whole-file rewrite.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

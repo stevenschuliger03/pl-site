@@ -1,0 +1,201 @@
+/* Palette is defined light-first on :root, then overridden for dark. Every
+   colour has a light definition here, so a viewer with no preference set never
+   lands on an undefined token. */
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --line: #e3e6ea;
+  --ink: #12151a;
+  --muted: #616b7a;
+  --faint: #8b95a3;
+  --accent: #2f6df6;
+  --ucl: #1b8a4b;
+  --uel: #3d8ec9;
+  --rel: #d4402f;
+  --win: #1b8a4b;
+  --draw: #9aa3af;
+  --loss: #d4402f;
+  --pos: #1b8a4b;
+  --neg: #d4402f;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1015;
+    --panel: #151a21;
+    --line: #242c37;
+    --ink: #e8ecf1;
+    --muted: #93a0b1;
+    --faint: #66727f;
+    --accent: #5b8dff;
+    --ucl: #34c06d;
+    --uel: #57a8e0;
+    --rel: #f0604d;
+    --win: #34c06d;
+    --draw: #7b8794;
+    --loss: #f0604d;
+    --pos: #34c06d;
+    --neg: #f0604d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px 72px; }
+
+/* ---- header ---- */
+header.top {
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  margin-bottom: 28px;
+}
+header.top .wrap { padding-block: 26px 22px; display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; justify-content: space-between; }
+h1 { font-size: 22px; letter-spacing: -0.02em; margin: 0; }
+h1 span { color: var(--faint); font-weight: 400; }
+.stamp { color: var(--muted); font-size: 13px; text-align: right; }
+.stamp b { color: var(--ink); font-weight: 600; }
+
+/* ---- panels ---- */
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
+.grid.wide { grid-template-columns: 1fr; }
+
+section.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.panel h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin: 0;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+}
+.panel h2 em { font-style: normal; text-transform: none; letter-spacing: 0; color: var(--faint); font-weight: 400; font-size: 12px; }
+
+/* Wide tables scroll inside their own panel rather than the page body. */
+.scroll { overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 10px; text-align: right; white-space: nowrap; }
+th {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--faint); font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+td { border-bottom: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+th.l, td.l { text-align: left; }
+td.team { font-weight: 600; }
+td.dim, th.dim { color: var(--muted); }
+td.pts { font-weight: 700; }
+
+/* Position markers: European places and the drop, as coloured rails. */
+td.rank { position: relative; color: var(--muted); width: 34px; }
+tr.ucl td.rank::before, tr.uel td.rank::before, tr.rel td.rank::before {
+  content: ""; position: absolute; left: 0; top: 4px; bottom: 4px; width: 3px; border-radius: 2px;
+}
+tr.ucl td.rank::before { background: var(--ucl); }
+tr.uel td.rank::before { background: var(--uel); }
+tr.rel td.rank::before { background: var(--rel); }
+
+/* ---- form guide ---- */
+.form { display: inline-flex; gap: 3px; }
+.form i {
+  width: 18px; height: 18px; border-radius: 4px;
+  font-style: normal; font-size: 10px; font-weight: 700;
+  display: grid; place-items: center; color: #fff;
+}
+.form i.W { background: var(--win); }
+.form i.D { background: var(--draw); }
+.form i.L { background: var(--loss); }
+
+.pos { color: var(--pos); }
+.neg { color: var(--neg); }
+
+/* ---- results / fixtures ---- */
+ul.matches { list-style: none; margin: 0; padding: 0; }
+ul.matches li {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+ul.matches li:last-child { border-bottom: 0; }
+ul.matches .h { text-align: right; }
+ul.matches .a { text-align: left; }
+ul.matches .score {
+  font-weight: 700; background: var(--bg); border: 1px solid var(--line);
+  border-radius: 6px; padding: 2px 9px; font-size: 14px;
+}
+ul.matches .when { font-size: 12px; color: var(--faint); font-weight: 500; }
+ul.matches .won { font-weight: 700; }
+ul.matches .lost { color: var(--muted); }
+
+footer {
+  color: var(--faint); font-size: 12px; text-align: center;
+  padding-top: 28px; border-top: 1px solid var(--line); margin-top: 28px;
+}
+footer a { color: var(--muted); }
+
+/* Team name has two forms in the markup; exactly one is ever shown. */
+td.team .abbr { display: none; }
+
+@media (max-width: 560px) {
+  .hide-sm { display: none; }
+  h1 { font-size: 19px; }
+  header.top .wrap { padding-block: 20px 16px; }
+  .stamp { text-align: left; }
+
+  /* Short codes and tighter cells, so Pts stays on screen instead of being
+     pushed into the horizontal scroll. */
+  td.team .full { display: none; }
+  td.team .abbr { display: inline; }
+  th, td { padding: 8px 6px; }
+  td.rank { width: 26px; }
+  .wrap { padding-inline: 12px; }
+
+  /* Results and fixtures stack badly at three columns this narrow. */
+  ul.matches li { grid-template-columns: 1fr auto 1fr; gap: 8px; padding: 9px 12px; font-size: 14px; }
+}
+
+/* ---- table legend ---- */
+.legend {
+  margin: 0;
+  padding: 11px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  align-items: center;
+}
+.legend .key {
+  display: inline-block;
+  width: 3px; height: 13px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: -2px;
+}
+.legend .key.ucl { background: var(--ucl); }
+.legend .key.uel { background: var(--uel); }
+.legend .key.rel { background: var(--rel); }

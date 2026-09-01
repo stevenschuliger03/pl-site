@@ -1,0 +1,682 @@
+[
+ {
+  "id": 15,
+  "name": "Man City",
+  "short": "MCI",
+  "played": 2,
+  "won": 2,
+  "drawn": 0,
+  "lost": 0,
+  "gf": 6,
+  "ga": 2,
+  "gd": 4,
+  "points": 6,
+  "form": [
+   "W",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 2,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 4,
+   "ga": 1
+  },
+  "position": 1
+ },
+ {
+  "id": 1,
+  "name": "Arsenal",
+  "short": "ARS",
+  "played": 2,
+  "won": 2,
+  "drawn": 0,
+  "lost": 0,
+  "gf": 4,
+  "ga": 0,
+  "gd": 4,
+  "points": 6,
+  "form": [
+   "W",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 3,
+   "ga": 0
+  },
+  "away": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 1,
+   "ga": 0
+  },
+  "position": 2
+ },
+ {
+  "id": 11,
+  "name": "Hull City",
+  "short": "HUL",
+  "played": 2,
+  "won": 2,
+  "drawn": 0,
+  "lost": 0,
+  "gf": 3,
+  "ga": 0,
+  "gd": 3,
+  "points": 6,
+  "form": [
+   "W",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 2,
+   "ga": 0
+  },
+  "away": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 1,
+   "ga": 0
+  },
+  "position": 3
+ },
+ {
+  "id": 6,
+  "name": "Chelsea",
+  "short": "CHE",
+  "played": 2,
+  "won": 2,
+  "drawn": 0,
+  "lost": 0,
+  "gf": 7,
+  "ga": 5,
+  "gd": 2,
+  "points": 6,
+  "form": [
+   "W",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 4,
+   "ga": 3
+  },
+  "away": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 3,
+   "ga": 2
+  },
+  "position": 4
+ },
+ {
+  "id": 4,
+  "name": "Brentford",
+  "short": "BRE",
+  "played": 2,
+  "won": 1,
+  "drawn": 1,
+  "lost": 0,
+  "gf": 4,
+  "ga": 1,
+  "gd": 3,
+  "points": 4,
+  "form": [
+   "D",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 3,
+   "ga": 0
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 1,
+   "ga": 1
+  },
+  "position": 5
+ },
+ {
+  "id": 17,
+  "name": "Newcastle",
+  "short": "NEW",
+  "played": 2,
+  "won": 1,
+  "drawn": 1,
+  "lost": 0,
+  "gf": 4,
+  "ga": 2,
+  "gd": 2,
+  "points": 4,
+  "form": [
+   "W",
+   "D"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 2,
+   "ga": 2
+  },
+  "away": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 2,
+   "ga": 0
+  },
+  "position": 6
+ },
+ {
+  "id": 9,
+  "name": "Everton",
+  "short": "EVE",
+  "played": 2,
+  "won": 1,
+  "drawn": 1,
+  "lost": 0,
+  "gf": 3,
+  "ga": 1,
+  "gd": 2,
+  "points": 4,
+  "form": [
+   "D",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 2,
+   "ga": 0
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 1,
+   "ga": 1
+  },
+  "position": 7
+ },
+ {
+  "id": 13,
+  "name": "Leeds",
+  "short": "LEE",
+  "played": 2,
+  "won": 1,
+  "drawn": 1,
+  "lost": 0,
+  "gf": 2,
+  "ga": 1,
+  "gd": 1,
+  "points": 4,
+  "form": [
+   "D",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 1,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 1,
+   "ga": 0
+  },
+  "position": 8
+ },
+ {
+  "id": 5,
+  "name": "Brighton",
+  "short": "BHA",
+  "played": 2,
+  "won": 1,
+  "drawn": 0,
+  "lost": 1,
+  "gf": 7,
+  "ga": 4,
+  "gd": 3,
+  "points": 3,
+  "form": [
+   "L",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 4,
+   "ga": 0
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 3,
+   "ga": 4
+  },
+  "position": 9
+ },
+ {
+  "id": 16,
+  "name": "Man Utd",
+  "short": "MUN",
+  "played": 2,
+  "won": 1,
+  "drawn": 0,
+  "lost": 1,
+  "gf": 5,
+  "ga": 4,
+  "gd": 1,
+  "points": 3,
+  "form": [
+   "W",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 5,
+   "ga": 2
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 2
+  },
+  "position": 10
+ },
+ {
+  "id": 20,
+  "name": "Sunderland",
+  "short": "SUN",
+  "played": 2,
+  "won": 1,
+  "drawn": 0,
+  "lost": 1,
+  "gf": 2,
+  "ga": 2,
+  "gd": 0,
+  "points": 3,
+  "form": [
+   "W",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 1,
+   "ga": 0
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 1,
+   "ga": 2
+  },
+  "position": 11
+ },
+ {
+  "id": 12,
+  "name": "Ipswich Town",
+  "short": "IPS",
+  "played": 2,
+  "won": 1,
+  "drawn": 0,
+  "lost": 1,
+  "gf": 4,
+  "ga": 6,
+  "gd": -2,
+  "points": 3,
+  "form": [
+   "L",
+   "W"
+  ],
+  "home": {
+   "played": 1,
+   "won": 1,
+   "drawn": 0,
+   "lost": 0,
+   "gf": 2,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 2,
+   "ga": 5
+  },
+  "position": 12
+ },
+ {
+  "id": 14,
+  "name": "Liverpool",
+  "short": "LIV",
+  "played": 2,
+  "won": 0,
+  "drawn": 2,
+  "lost": 0,
+  "gf": 4,
+  "ga": 4,
+  "gd": 0,
+  "points": 2,
+  "form": [
+   "D",
+   "D"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 2,
+   "ga": 2
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 2,
+   "ga": 2
+  },
+  "position": 13
+ },
+ {
+  "id": 3,
+  "name": "Bournemouth",
+  "short": "BOU",
+  "played": 2,
+  "won": 0,
+  "drawn": 1,
+  "lost": 1,
+  "gf": 2,
+  "ga": 3,
+  "gd": -1,
+  "points": 1,
+  "form": [
+   "D",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 1,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 1,
+   "ga": 2
+  },
+  "position": 14
+ },
+ {
+  "id": 18,
+  "name": "Nott'm Forest",
+  "short": "NFO",
+  "played": 2,
+  "won": 0,
+  "drawn": 1,
+  "lost": 1,
+  "gf": 2,
+  "ga": 3,
+  "gd": -1,
+  "points": 1,
+  "form": [
+   "D",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 1,
+   "lost": 0,
+   "gf": 2,
+   "ga": 2
+  },
+  "position": 15
+ },
+ {
+  "id": 10,
+  "name": "Fulham",
+  "short": "FUL",
+  "played": 2,
+  "won": 0,
+  "drawn": 0,
+  "lost": 2,
+  "gf": 2,
+  "ga": 4,
+  "gd": -2,
+  "points": 0,
+  "form": [
+   "L",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 2,
+   "ga": 3
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 1
+  },
+  "position": 16
+ },
+ {
+  "id": 7,
+  "name": "Coventry City",
+  "short": "COV",
+  "played": 2,
+  "won": 0,
+  "drawn": 0,
+  "lost": 2,
+  "gf": 0,
+  "ga": 4,
+  "gd": -4,
+  "points": 0,
+  "form": [
+   "L",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 3
+  },
+  "position": 17
+ },
+ {
+  "id": 8,
+  "name": "Crystal Palace",
+  "short": "CRY",
+  "played": 2,
+  "won": 0,
+  "drawn": 0,
+  "lost": 2,
+  "gf": 1,
+  "ga": 6,
+  "gd": -5,
+  "points": 0,
+  "form": [
+   "L",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 1,
+   "ga": 4
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 2
+  },
+  "position": 18
+ },
+ {
+  "id": 2,
+  "name": "Aston Villa",
+  "short": "AVL",
+  "played": 2,
+  "won": 0,
+  "drawn": 0,
+  "lost": 2,
+  "gf": 0,
+  "ga": 5,
+  "gd": -5,
+  "points": 0,
+  "form": [
+   "L",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 1
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 4
+  },
+  "position": 19
+ },
+ {
+  "id": 19,
+  "name": "Spurs",
+  "short": "TOT",
+  "played": 2,
+  "won": 0,
+  "drawn": 0,
+  "lost": 2,
+  "gf": 0,
+  "ga": 5,
+  "gd": -5,
+  "points": 0,
+  "form": [
+   "L",
+   "L"
+  ],
+  "home": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 2
+  },
+  "away": {
+   "played": 1,
+   "won": 0,
+   "drawn": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 3
+  },
+  "position": 20
+ }
+]

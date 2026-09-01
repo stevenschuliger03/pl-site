@@ -1,0 +1,24 @@
+// Cloudflare Workers config, deploying this site as pure static assets.
+//
+// Unlike ppo-site there is no Worker script here: this site has no forms and no
+// API routes, so there is nothing to run at request time. The data is baked in
+// at build time by tools/fetch.py, and Cloudflare just serves public/.
+//
+// Build command in the Cloudflare dashboard (Settings > Build) must run BOTH
+// steps, in this order:
+//
+//     python tools/fetch.py && hugo
+//
+// If the build only runs `hugo`, the site still deploys -- with whatever stale
+// JSON was committed to data/pl/. That fails silently and looks fine, so it is
+// worth checking the "Updated" stamp in the page header after a deploy.
+{
+  "name": "pl-dashboard",
+  "compatibility_date": "2026-08-01",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./public"
+  }
+}

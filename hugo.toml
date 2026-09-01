@@ -1,0 +1,16 @@
+baseURL = "https://pl-dashboard.stevenschuliger03.workers.dev/"
+languageCode = "en-us"
+title = "Premier League Dashboard"
+
+# Everything on this site is rendered from data/pl/*.json, which tools/fetch.py
+# writes. There are no content pages to speak of, so the taxonomy machinery is
+# just dead weight in the build.
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  description = "Live Premier League standings, form, scorers and expected-goals tables, rebuilt from the official Fantasy Premier League feed."
+  # Shown in the footer so anyone reading knows where the numbers came from.
+  source = "Fantasy Premier League public API"
+
+[markup.goldmark.renderer]
+  unsafe = true

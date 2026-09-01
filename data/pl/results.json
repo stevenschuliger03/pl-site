@@ -1,0 +1,202 @@
+[
+ {
+  "gw": 2,
+  "kickoff": "2026-08-31T19:00:00Z",
+  "home": "AVL",
+  "home_full": "Aston Villa",
+  "away": "ARS",
+  "away_full": "Arsenal",
+  "hs": 0,
+  "ascore": 1
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-30T15:30:00Z",
+  "home": "MUN",
+  "home_full": "Man Utd",
+  "away": "IPS",
+  "away_full": "Ipswich Town",
+  "hs": 5,
+  "ascore": 2
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-30T13:00:00Z",
+  "home": "CHE",
+  "home_full": "Chelsea",
+  "away": "BHA",
+  "away_full": "Brighton",
+  "hs": 4,
+  "ascore": 3
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-30T13:00:00Z",
+  "home": "LEE",
+  "home_full": "Leeds",
+  "away": "BRE",
+  "away_full": "Brentford",
+  "hs": 1,
+  "ascore": 1
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-30T13:00:00Z",
+  "home": "SUN",
+  "home_full": "Sunderland",
+  "away": "FUL",
+  "away_full": "Fulham",
+  "hs": 1,
+  "ascore": 0
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-29T16:30:00Z",
+  "home": "TOT",
+  "home_full": "Spurs",
+  "away": "NEW",
+  "away_full": "Newcastle",
+  "hs": 0,
+  "ascore": 2
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-29T14:00:00Z",
+  "home": "BOU",
+  "home_full": "Bournemouth",
+  "away": "EVE",
+  "away_full": "Everton",
+  "hs": 1,
+  "ascore": 1
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-29T14:00:00Z",
+  "home": "COV",
+  "home_full": "Coventry City",
+  "away": "HUL",
+  "away_full": "Hull City",
+  "hs": 0,
+  "ascore": 1
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-29T11:30:00Z",
+  "home": "LIV",
+  "home_full": "Liverpool",
+  "away": "NFO",
+  "away_full": "Nott'm Forest",
+  "hs": 2,
+  "ascore": 2
+ },
+ {
+  "gw": 2,
+  "kickoff": "2026-08-28T19:00:00Z",
+  "home": "CRY",
+  "home_full": "Crystal Palace",
+  "away": "MCI",
+  "away_full": "Man City",
+  "hs": 1,
+  "ascore": 4
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-24T19:00:00Z",
+  "home": "FUL",
+  "home_full": "Fulham",
+  "away": "CHE",
+  "away_full": "Chelsea",
+  "hs": 2,
+  "ascore": 3
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-23T15:30:00Z",
+  "home": "NEW",
+  "home_full": "Newcastle",
+  "away": "LIV",
+  "away_full": "Liverpool",
+  "hs": 2,
+  "ascore": 2
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-23T13:00:00Z",
+  "home": "BHA",
+  "home_full": "Brighton",
+  "away": "AVL",
+  "away_full": "Aston Villa",
+  "hs": 4,
+  "ascore": 0
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-23T13:00:00Z",
+  "home": "MCI",
+  "home_full": "Man City",
+  "away": "BOU",
+  "away_full": "Bournemouth",
+  "hs": 2,
+  "ascore": 1
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-22T16:30:00Z",
+  "home": "BRE",
+  "home_full": "Brentford",
+  "away": "TOT",
+  "away_full": "Spurs",
+  "hs": 3,
+  "ascore": 0
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-22T14:00:00Z",
+  "home": "EVE",
+  "home_full": "Everton",
+  "away": "CRY",
+  "away_full": "Crystal Palace",
+  "hs": 2,
+  "ascore": 0
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-22T14:00:00Z",
+  "home": "IPS",
+  "home_full": "Ipswich Town",
+  "away": "SUN",
+  "away_full": "Sunderland",
+  "hs": 2,
+  "ascore": 1
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-22T14:00:00Z",
+  "home": "NFO",
+  "home_full": "Nott'm Forest",
+  "away": "LEE",
+  "away_full": "Leeds",
+  "hs": 0,
+  "ascore": 1
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-22T11:30:00Z",
+  "home": "HUL",
+  "home_full": "Hull City",
+  "away": "MUN",
+  "away_full": "Man Utd",
+  "hs": 2,
+  "ascore": 0
+ },
+ {
+  "gw": 1,
+  "kickoff": "2026-08-21T19:00:00Z",
+  "home": "ARS",
+  "home_full": "Arsenal",
+  "away": "COV",
+  "away_full": "Coventry City",
+  "hs": 3,
+  "ascore": 0
+ }
+]

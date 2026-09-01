@@ -1,0 +1,58 @@
+name: Build and deploy
+
+# Three triggers, for three different reasons:
+#   push     - ship template/style changes as soon as they land
+#   schedule - the real point of this file. The site renders a snapshot of the
+#              season, so without a timed rebuild the table silently freezes at
+#              whatever gameweek was current when the last commit landed.
+#   manual   - for pulling fresh data right after a match without waiting.
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 06:15 UTC daily. Premier League matches finish late Sunday at the latest,
+    # and FPL confirms bonus points within about a day, so a morning rebuild
+    # always picks up a completed gameweek. Cron here is UTC and GitHub gives
+    # no DST handling, which is fine -- nothing depends on the local hour.
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+# A scheduled run and a push run must never upload at the same time; the later
+# one would race the asset upload. Newer wins, but let an in-flight deploy
+# finish rather than leaving the site half-updated.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          # Must stay in step with the local toolchain, or CI can render
+          # differently from what was tested. Extended is required for the
+          # asset pipeline used in baseof.html.
+          hugo-version: "0.164.0"
+          extended: true
+
+      # Fetches fresh data, does a clean build, and runs the output checks in
+      # tools/deploy.py -- livereload contamination, an empty table, missing
+      # panels, a stale data stamp. --dry-run stops short of deploying so the
+      # upload below is the only thing that can publish.
+      - name: Fetch data, build, and verify
+        run: python tools/deploy.py --dry-run
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # The build already ran and was verified above; re-running it here
+          # would discard those checks.
+          command: deploy
