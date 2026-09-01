@@ -48,13 +48,54 @@ steps, every time.
 Local preview: `hugo server --port 1315`, or the `pl-site` entry in
 `~/.claude/launch.json`. **Stop the dev server before building to deploy.**
 
-### Not yet automated
+## Automatic rebuilds
 
-The deploy uploads a static snapshot, so the numbers are frozen at upload time
-until someone runs `deploy.py` again. Unlike `ppo-site`, this repo is not on
-GitHub and Cloudflare is not building it, so there is no rebuild-on-push and no
-scheduled refresh. Until that is wired up, the table needs a manual redeploy
-after each gameweek.
+Repo: https://github.com/stevenschuliger03/pl-site
+
+`.github/workflows/deploy.yml` rebuilds and redeploys on three triggers:
+
+| Trigger | When | Why |
+| --- | --- | --- |
+| `push` | commits to `main` | ship template and style changes |
+| `schedule` | daily, 06:15 UTC | **the important one** — refreshes the data |
+| `workflow_dispatch` | manual button | pull fresh data right after a match |
+
+The scheduled run is the whole reason this workflow exists. The site renders a
+snapshot of the season, so without a timed rebuild the table silently freezes
+at whatever gameweek was current when the last commit landed.
+
+CI runs `python tools/deploy.py --dry-run` before deploying, so the same checks
+that block a bad local deploy also gate the pipeline.
+
+### One-time setup: the Cloudflare API token
+
+CI cannot use your `wrangler login` credentials — those are OAuth, stored on
+one machine. GitHub's runners need an API token instead.
+
+1. https://dash.cloudflare.com/profile/api-tokens → **Create Token**
+2. Use the **Edit Cloudflare Workers** template
+3. Scope Account Resources to your account, create it, copy the value
+4. Store it as a repo secret — the value should go straight from Cloudflare to
+   GitHub and be pasted at the prompt, never into a file or a chat window:
+
+```bash
+gh secret set CLOUDFLARE_API_TOKEN --repo stevenschuliger03/pl-site
+```
+
+Then re-run the latest workflow (`gh run rerun --failed`) to confirm it
+deploys green.
+
+Until that secret exists every run fails at the deploy step with
+`necessary to set a CLOUDFLARE_API_TOKEN`. The build and verification steps
+still run and still pass, so a red run does not mean the site is broken.
+
+### Pinning note
+
+`wranglerVersion` in the workflow is pinned deliberately. Left unset, the
+action's `npx` call cannot install wrangler non-interactively and falls back to
+whatever version is preinstalled on the runner — which predates assets-only
+Workers and demands a `main` entry point this config does not have. It fails
+looking like a broken config rather than a stale tool.
 
 ## Where the data comes from
 
